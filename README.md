@@ -1,59 +1,89 @@
-Hello World Setup with seL4 Tutorials
-1.1 Setup with seL4-Tutorials-Manifest and Environment
-Create a directory for the tutorials:
-bash
-mkdir sel4-tutorials-manifest
-cd sel4-tutorials-manifest
+# Hello World Tutorial Setup with seL4-tutorials-manifest
 
-Initialize the repository:
-bash
+## 1.1 Setup with seL4-tutorials-manifest and Virtual Environment
+
+### Setup:
+
+- Create a new directory for the tutorial manifest:
+
+  ```bash
+  mkdir sel4-tutorials-manifest
+  cd sel4-tutorials-manifest
+  ```
+
+- Initialize and sync the repository:
+
+```bash
 repo init -u https://github.com/seL4/sel4-tutorials-manifest
 repo sync
+```
 
-Create a virtual Python environment:
-bash
+### you should see something like this 👀 👀 👀 
+=======
+- Create a virtual Python environment and activate the environment 
+
+```bash
 python3 -m venv venv
-
-Activate the virtual environment:
-bash
 source venv/bin/activate
 
-Install required packages:
-bash
+```
+
+### Dependencies:
+
+- Install setuptools
+
+```bash
 pip3 install setuptools
+```
+
+- Install seL4 dependencies
+
+```bash
 pip3 install sel4-deps
+```
+
+- Install CAmkES dependencies
+
+```bash
 pip3 install camkes-deps
+```
 
-If only required, install additional packages:
-bash
-pip install aenum 
+- If only required, install additional packages:
+
+```bash
+pip install aenum
 pip install sh
+```
 
-To deactivate the environment:
-bash
-deactivate
+## 1.2 Building Your First Program
 
-Initialize the Hello World tutorial:
-bash
+- Build the project using ninja:
+
+```bash
 ./init --tut hello-world
+```
+
+- Navigate to the build directory:
+
+```bash
 cd hello-world_build
+```
 
-1.2 Building Your First Program
-Build the program using Ninja:
-bash
+- Build the project using ninja:
+
+```bash
 ninja
+```
 
-Clean the build if necessary:
-bash
+- Clean the build using ninja:
+
+```bash
 ninja clean
+```
 
-Run the simulation:
-bash
-./simulate
+- Simulate the program:
 
-Output:
-text
-Booting all finished, dropped to user space
-Hello, World!
-
-Terminate QEMU: Press Ctrl-A, then X.
+```bash
+ninja clean
+```
+<img width="821" alt="Screenshot 2024-09-25 at 16 18 55" src="https://github.com/user-attachments/assets/04d420b4-217e-46e9-bc73-d04dc3a0f39f">
