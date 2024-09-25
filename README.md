@@ -9,3 +9,16 @@
   ```bash
   mkdir sel4-tutorials-manifest
   cd sel4-tutorials-manifest
+  ```
+
+- Initialize and sync the repository:
+
+```bash
+repo init -u https://github.com/seL4/sel4-tutorials-manifest
+repo sync
+```
+
+
+
+
+
